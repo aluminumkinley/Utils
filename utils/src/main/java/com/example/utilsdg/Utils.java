@@ -10,4 +10,16 @@ public class Utils {
     public static String returnDummyText(){
         return dummyText;
     }
+
+    /**
+    * @param millisecond time in milliseconds
+    * @return formated time 
+    */
+    public static String formatTime(int millisecond){
+        if(millisecond==0)
+            return "0.00.0";
+        return String.format(Locale.ENGLISH,timeFormat,
+                TimeUnit.MILLISECONDS.toMinutes(millisecond),
+                (millisecond/1000f)%60);
+    }
 }
